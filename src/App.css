@@ -8,9 +8,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +25,32 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.animal-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.invisible-btn {
+  background-color: transparent;
+  border: none;
+}
+
+/* animal-pics */
+
+.animal-pic {
+  width: 15vw;
+}
+
+.clicked {
+  width: 15vw;
+  animation: spin infinite 1s linear;
 }
