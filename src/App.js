@@ -1,26 +1,26 @@
 import "./App.css";
 import React from "react";
 // SOUNDS
-import cow from "./public/sounds/cow.mov";
-import pig from "./public/sounds/pig.mov";
-import dog from "./public/sounds/dog.mp3";
-import monkey from "./public/sounds/monkey.mp3";
-import cat from "./public/sounds/cat.mp3";
-import rooster from "./public/sounds/rooster.mp3";
-import sheep from "./public/sounds/sheep.mp3";
-import elephant from "./public/sounds/elephant.mp3";
-import duck from "./public/sounds/duck.mp3";
+import cow from "./sounds/cow.mov";
+import pig from "./sounds/pig.mov";
+import dog from "./sounds/dog.mp3";
+import monkey from "./sounds/monkey.mp3";
+import cat from "./sounds/cat.mp3";
+import rooster from "./sounds/rooster.mp3";
+import sheep from "./sounds/sheep.mp3";
+import elephant from "./sounds/elephant.mp3";
+import duck from "./sounds/duck.mp3";
 
 //PICS
-import cowPic from "./public/pics/cowpic.png";
-import pigPic from "./public/pics/pigpic.png";
-import dogPic from "./public/pics/dog.png";
-import monkeyPic from "./public/pics/monkey.png";
-import catPic from "./public/pics/cat.png";
-import roosterPic from "./public/pics/rooster.png";
-import sheepPic from "./public/pics/sheep.png";
-import elephantPic from "./public/pics/elephant.png";
-import duckPic from "./public/pics/duck.png";
+import cowPic from "./pics/cowpic.png";
+import pigPic from "./pics/pigpic.png";
+import dogPic from "./pics/dog.png";
+import monkeyPic from "./pics/monkey.png";
+import catPic from "./pics/cat.png";
+import roosterPic from "./pics/rooster.png";
+import sheepPic from "./pics/sheep.png";
+import elephantPic from "./pics/elephant.png";
+import duckPic from "./pics/duck.png";
 
 function App() {
   //CREATE AUDIOS

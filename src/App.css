@@ -1,3 +1,6 @@
+/* font-family: 'Luckiest Guy', cursive;
+font-family: 'Righteous', cursive; */
+
 .App {
   text-align: center;
 }
@@ -39,6 +42,10 @@
   }
 }
 
+h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3rem;
+}
 .invisible-btn {
   background-color: transparent;
   border: none;
@@ -53,4 +60,13 @@
 .clicked {
   width: 15vw;
   animation: spin infinite 1s linear;
+  background-image: url("/src/pics/yellow.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#duck,
+#cat {
+  width: 10vw;
 }
