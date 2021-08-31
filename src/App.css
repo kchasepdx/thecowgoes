@@ -29,8 +29,7 @@ font-family: 'Righteous', cursive; */
 }
 
 .animal-container {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 2%;
 }
 
 @keyframes spin {
@@ -42,9 +41,15 @@ font-family: 'Righteous', cursive; */
   }
 }
 
+#cow-cartoon {
+  width: 5vw;
+}
+
 h1 {
   font-family: "Luckiest Guy", cursive;
   font-size: 3rem;
+  color: #3db2ff;
+  margin: 2% auto;
 }
 .invisible-btn {
   background-color: transparent;
@@ -66,7 +71,7 @@ h1 {
   background-position: center;
 }
 
-#duck,
+/* #duck,
 #cat {
   width: 10vw;
-}
+} */

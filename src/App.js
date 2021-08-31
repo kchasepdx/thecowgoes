@@ -21,6 +21,7 @@ import roosterPic from "./pics/rooster.png";
 import sheepPic from "./pics/sheep.png";
 import elephantPic from "./pics/elephant.png";
 import duckPic from "./pics/duck.png";
+import cowCartoon from "./pics/cow.png";
 
 function App() {
   //CREATE AUDIOS
@@ -46,79 +47,104 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>the cow goes.....</h1>
+        <h1>
+          the{" "}
+          <span>
+            <img id="cow-cartoon" src={cowCartoon} alt="cow" />
+          </span>{" "}
+          goes.....
+        </h1>
       </header>
       <body>
-        <div className="animal-container">
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, cowSound)}
-          >
-            <img className="animal-pic" id="cow" src={cowPic} alt="cow" />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, pigSound)}
-          >
-            <img className="animal-pic" id="pig" src={pigPic} alt="pig" />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, dogSound)}
-          >
-            <img className="animal-pic" id="dog" src={dogPic} alt="dog" />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, monkeySound)}
-          >
-            <img
-              className="animal-pic"
-              id="monkey"
-              src={monkeyPic}
-              alt="monkey"
-            />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, catSound)}
-          >
-            <img className="animal-pic" id="cat" src={catPic} alt="cat" />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, roosterSound)}
-          >
-            <img
-              className="animal-pic"
-              id="rooster"
-              src={roosterPic}
-              alt="rooster"
-            />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, sheepSound)}
-          >
-            <img className="animal-pic" id="sheep" src={sheepPic} alt="sheep" />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, elephantSound)}
-          >
-            <img
-              className="animal-pic"
-              id="elephant"
-              src={elephantPic}
-              alt="elephant"
-            />
-          </button>
-          <button
-            className="invisible-btn"
-            onClick={(event) => playSound(event, duckSound)}
-          >
-            <img className="animal-pic" id="duck" src={duckPic} alt="duck" />
-          </button>
+        <div className="animal-container container">
+          <div className="row">
+            <div className="col">
+              {" "}
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, cowSound)}
+              >
+                <img className="animal-pic" id="cow" src={cowPic} alt="cow" />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, monkeySound)}
+              >
+                <img
+                  className="animal-pic"
+                  id="monkey"
+                  src={monkeyPic}
+                  alt="monkey"
+                />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, sheepSound)}
+              >
+                <img
+                  className="animal-pic"
+                  id="sheep"
+                  src={sheepPic}
+                  alt="sheep"
+                />
+              </button>
+            </div>
+            <div className="col">
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, pigSound)}
+              >
+                <img className="animal-pic" id="pig" src={pigPic} alt="pig" />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, catSound)}
+              >
+                <img className="animal-pic" id="cat" src={catPic} alt="cat" />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, elephantSound)}
+              >
+                <img
+                  className="animal-pic"
+                  id="elephant"
+                  src={elephantPic}
+                  alt="elephant"
+                />
+              </button>
+            </div>
+            <div className="col">
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, dogSound)}
+              >
+                <img className="animal-pic" id="dog" src={dogPic} alt="dog" />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, roosterSound)}
+              >
+                <img
+                  className="animal-pic"
+                  id="rooster"
+                  src={roosterPic}
+                  alt="rooster"
+                />
+              </button>
+              <button
+                className="invisible-btn"
+                onClick={(event) => playSound(event, duckSound)}
+              >
+                <img
+                  className="animal-pic"
+                  id="duck"
+                  src={duckPic}
+                  alt="duck"
+                />
+              </button>
+            </div>
+          </div>
         </div>
       </body>
     </div>
