@@ -35,17 +35,17 @@ function Nav() {
                 </a>
               </li>
               <li>
-                <Link className="dropdown-item" to="/animalsounds">
+                <Link className="nav-link" to="/animalsounds">
                   Animal Sounds
                 </Link>
               </li>
               <li>
-                <Link className="  dropdown-item" to="/piano">
+                <Link className="  nav-link" to="/piano">
                   Piano
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" to="/game">
+                <Link className="nav-link" to="/game">
                   Memory Game
                 </Link>
               </li>

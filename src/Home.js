@@ -3,6 +3,7 @@ import React from "react";
 import cowCartoon from "./pics/cow.png";
 import barn from "./pics/barn.png";
 import tree from "./pics/tree.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -34,6 +35,8 @@ function Home() {
             www.flaticon.com
           </a>
         </div>
+        <br />
+        <Link to="www.kristenchasecodes.com">www.kristenchasecodes.com</Link>
       </footer>
     </div>
   );
