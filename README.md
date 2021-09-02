@@ -1,4 +1,4 @@
-<h1🐄  The Cow Goes...🐄  </h1>
+<h1>🐄  The Cow Goes...🐄  </h1>
 <a href="https://thecowgoes.netlify.app/">Live Demo</a>
 <p>This app is for littles. I orginally just wanted to build an simple animal sounds app for my daughter, but couldn't resist the challenge of incorporating a two player memory game.</p>
 
