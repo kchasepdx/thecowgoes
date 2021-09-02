@@ -3,6 +3,7 @@ font-family: 'Righteous', cursive; */
 
 .App {
   text-align: center;
+  font-family: "Righteous", cursive;
 }
 
 .App-logo {
@@ -28,6 +29,29 @@ font-family: 'Righteous', cursive; */
   color: #61dafb;
 }
 
+.app-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3rem;
+  color: #3db2ff;
+  margin: 2% auto;
+}
+
+#nav {
+  background-color: transparent;
+}
+
+#nav a {
+  color: #1d2d50;
+}
+
+#nav-title {
+  font-size: 1.2rem;
+}
+
+#nav-cow {
+  width: 2vw;
+}
+
 .animal-container {
   padding: 2%;
 }
@@ -45,12 +69,10 @@ font-family: 'Righteous', cursive; */
   width: 5vw;
 }
 
-h1 {
+nav {
   font-family: "Luckiest Guy", cursive;
-  font-size: 3rem;
-  color: #3db2ff;
-  margin: 2% auto;
 }
+
 .invisible-btn {
   background-color: transparent;
   border: none;
@@ -75,3 +97,103 @@ h1 {
 #cat {
   width: 10vw;
 } */
+
+/* ANIMAL SOUNDS */
+
+.as-btn {
+  color: white;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff94cc;
+  padding: 1vw;
+  margin: 1vw;
+  font-size: 1.2rem;
+  font-family: "Righteous", cursive;
+}
+
+.as-btn i {
+  padding: 0.5vw;
+}
+
+.as-btn:hover {
+  background-color: #ffc947;
+}
+
+/* GAME */
+
+.game-card {
+  background-color: #61dafb;
+  width: 200px;
+  height: 200px;
+  padding: 1px 6px;
+  margin: 3px;
+  border-radius: 20px;
+  border: none;
+}
+
+.game-card:hover {
+  background-color: #e4bad4;
+}
+.placeholder-div {
+  width: 45%;
+  height: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.game-animal-pic {
+  width: 45%;
+  height: 50%;
+  vertical-align: unset !important;
+}
+
+.delete {
+  background-color: white;
+  cursor: not-allowed !important;
+}
+
+.delete-animal {
+  background-color: white;
+  cursor: not-allowed !important;
+  opacity: 0.4;
+}
+
+.player-one {
+  margin-left: 5vw;
+  display: inline;
+  float: left;
+  margin-bottom: 2vh;
+  font-size: 2rem;
+}
+
+.player-two {
+  margin-right: 5vw;
+  margin-bottom: 2vh;
+  display: inline;
+  float: right;
+  font-size: 2rem;
+}
+
+#player-one-score {
+  margin-left: 2%;
+}
+
+#player-two-score {
+  margin-left: 2%;
+}
+
+.highlight-player {
+  background-color: #fff47d;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.animal-container-game {
+  margin: 5% auto;
+  padding: 4% 20%;
+}
+
+.animal-container {
+  margin: 5% auto;
+  padding: 4% 10%;
+}
