@@ -210,6 +210,34 @@ nav {
   padding: 4% 10%;
 }
 
+/* GAME- IPHONE */
+
+@media screen and (max-width: 768px) {
+  .game-card {
+    width: 21vw;
+    height: 15vh;
+  }
+
+  .game-animal-pic {
+    width: 96%;
+    height: 57%;
+  }
+
+  .animal-container-game {
+    margin: 5% auto;
+    padding: 4% 5%;
+  }
+}
+
+/* IPAD */
+
+@media screen and (max-width: 1064px) {
+  .animal-container-game {
+    margin: 5% auto;
+    padding: 4% 5%;
+  }
+}
+
 /* PIANO */
 
 .piano-key {
