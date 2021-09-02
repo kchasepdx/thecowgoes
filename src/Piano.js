@@ -1,8 +1,10 @@
 import React from "react";
 import cowCartoon from "./pics/cow.png";
+import Media from "./media.js";
 
 function Piano() {
   //CREATE AUDIOS
+  const keyArray = Media.keys;
 
   function playSound(event, file) {
     event.target.className = "key-clicked";
@@ -10,7 +12,7 @@ function Piano() {
     sound.play();
     setTimeout(function () {
       event.target.className = "piano-key";
-    }, 1000);
+    }, 500);
   }
 
   return (
@@ -23,24 +25,17 @@ function Piano() {
           </span>{" "}
           FUN{" "}
         </h1>
-        <div>
-          <h2>COMING SOON</h2>
-        </div>
       </header>
-      <div>
-        <div className="animal-container container-fluid">
-          <div className="row">
-            <div className="col-lg">
-              {animalArr.map((x) => (
-                <button
-                  key={x._id}
-                  className="piano-key"
-                  onClick={(event) => playSound(event, x.sound)}
-                ></button>
-              ))}
-            </div>
-          </div>
-        </div>
+
+      <div className="piano-container">
+        {keyArray.map((x) => (
+          <button
+            key={x.key}
+            className="piano-key"
+            onClick={(event) => playSound(event, x.sound)}
+            id={x.id}
+          ></button>
+        ))}
       </div>
     </div>
   );
