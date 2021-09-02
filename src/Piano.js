@@ -15,6 +15,9 @@ function Piano() {
           </span>{" "}
           FUN{" "}
         </h1>
+        <div>
+          <h2>COMING SOON</h2>
+        </div>
       </header>
     </div>
   );

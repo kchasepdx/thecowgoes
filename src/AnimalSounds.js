@@ -56,11 +56,11 @@ function AnimalSounds() {
         </button>
         {!displayAll && (
           <button className="as-btn" onClick={showMore}>
-            <i class="fas fa-cat"></i>Four More
+            <i className="fas fa-cat"></i>Four More
           </button>
         )}
       </header>
-      <body>
+      <div>
         <div className="animal-container container-fluid">
           <div className="row">
             {displayAll && (
@@ -103,7 +103,7 @@ function AnimalSounds() {
             )}
           </div>
         </div>
-      </body>
+      </div>
     </div>
   );
 }

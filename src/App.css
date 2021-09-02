@@ -36,6 +36,8 @@ font-family: 'Righteous', cursive; */
   margin: 2% auto;
 }
 
+/* NAV */
+
 #nav {
   background-color: transparent;
 }
@@ -71,6 +73,16 @@ font-family: 'Righteous', cursive; */
 
 nav {
   font-family: "Luckiest Guy", cursive;
+}
+
+/* LANDING */
+
+#landing-images {
+  margin: 4% 15%;
+}
+
+#landing-images img {
+  width: 20%;
 }
 
 .invisible-btn {

@@ -5,9 +5,9 @@ import cowCartoon from "./pics/cow.png";
 function Nav() {
   return (
     <div id="nav">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
             <h1 className="app-title" id="nav-title">
               the{" "}
               <span>
@@ -17,7 +17,7 @@ function Nav() {
             </h1>
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -25,42 +25,31 @@ function Nav() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
-                  <i class="fas fa-home"></i>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
+                  <i className="fas fa-home"></i>
                 </a>
               </li>
               <li>
-                <Link class="dropdown-item" to="/animalsounds">
+                <Link className="dropdown-item" to="/animalsounds">
                   Animal Sounds
                 </Link>
               </li>
               <li>
-                <Link class="dropdown-item" to="/piano">
+                <Link className="  dropdown-item" to="/piano">
                   Piano
                 </Link>
               </li>
               <li>
-                <Link class="dropdown-item" to="/game">
+                <Link className="dropdown-item" to="/game">
                   Memory Game
                 </Link>
               </li>
             </ul>
-            {/* <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form> */}
           </div>
         </div>
       </nav>

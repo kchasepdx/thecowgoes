@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import cowCartoon from "./pics/cow.png";
 import Media from "./media";
-import { setTokenSourceMapRange } from "typescript";
 
 function Memory() {
   const [clicked, setClicked] = useState({ choiceOne: "", choiceTwo: "" });
@@ -141,7 +140,7 @@ function Memory() {
             {playerOneScore}
           </span>
           <h2 className={`player-two ${!turn && "highlight-player"}`}>
-            <i class="fas fa-kiwi-bird"></i> PLAYER TWO
+            <i className="fas fa-kiwi-bird"></i> PLAYER TWO
           </h2>{" "}
           <span id="player-two-score" className="badge bg-secondary player-two">
             {playerTwoScore}
@@ -152,7 +151,7 @@ function Memory() {
       {/* MODAL */}
       {modal !== 0 ? (
         <>
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success" role="alert">
             {modal === 1 ? (
               <>
                 <i className="fas fa-frog"> </i>
@@ -171,7 +170,7 @@ function Memory() {
               </>
             ) : null}
           </div>
-          <div class="d-grid ">
+          <div className="d-grid ">
             <button
               className="as-btn"
               onClick={() => {
