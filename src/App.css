@@ -54,8 +54,30 @@ font-family: 'Righteous', cursive; */
   width: 2vw;
 }
 
+/* NAV- IPHONE */
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  #nav-cow {
+    width: 10vw;
+  }
+  #cow-cartoon {
+    width: 10vw;
+  }
+}
+
+/* NAV IPAD */
+
+@media screen and (min-width: 768px) and (max-width: 1064px) {
+  #nav-cow {
+    width: 5vw;
+  }
+  #cow-cartoon {
+    width: 10vw;
+  }
+}
+
 .animal-container {
-  padding: 2%;
+  padding: 4%;
 }
 
 @keyframes spin {
@@ -105,11 +127,6 @@ nav {
   background-position: center;
 }
 
-/* #duck,
-#cat {
-  width: 10vw;
-} */
-
 /* ANIMAL SOUNDS */
 
 .as-btn {
@@ -129,6 +146,30 @@ nav {
 
 .as-btn:hover {
   background-color: #ffc947;
+}
+
+/* ANIMAL SOUNDS- IPHONE */
+
+@media screen and (max-width: 768px) {
+  .animal-pic {
+    width: 43vw;
+    margin-bottom: 5%;
+  }
+  .clicked {
+    width: 43vw;
+    margin-bottom: 5%;
+  }
+}
+
+/* IPAD */
+
+@media screen and (min-width: 769px) and (max-width: 1064px) {
+  .animal-pic {
+    width: 20vw;
+  }
+  .clicked {
+    width: 20vw;
+  }
 }
 
 /* GAME */
@@ -203,11 +244,6 @@ nav {
 .animal-container-game {
   margin: 5% auto;
   padding: 4% 20%;
-}
-
-.animal-container {
-  margin: 5% auto;
-  padding: 4% 10%;
 }
 
 /* GAME- IPHONE */
