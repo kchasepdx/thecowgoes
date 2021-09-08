@@ -22,6 +22,7 @@ function AnimalSounds() {
       let randomIndex = Math.floor(Math.random() * i + 1);
       console.log("ranindex= " + randomIndex);
       [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+      console.log("array " + JSON.stringify(array));
     }
     return array;
   }

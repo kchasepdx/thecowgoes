@@ -201,14 +201,15 @@ nav {
 }
 
 .delete {
-  background-color: white;
+  background-color: transparent;
   cursor: not-allowed !important;
+  pointer-events: all !important;
 }
 
 .delete-animal {
-  background-color: white;
+  background-color: transparent;
   cursor: not-allowed !important;
-  opacity: 0.4;
+  pointer-events: all !important;
 }
 
 .player-one {

@@ -198,6 +198,7 @@ function Memory() {
                       clear.includes(x.name) ? "delete" : null
                     }`}
                     key={index}
+                    disabled={clear.includes(x.name) ? true : false}
                   >
                     {clicked.choiceOne.choice === index.toString() ||
                     clicked.choiceTwo.choice === index.toString() ? (
@@ -214,7 +215,9 @@ function Memory() {
                       <button
                         name={x.name}
                         id={index}
-                        className="placeholder-div"
+                        className={`placeholder-div ${
+                          clear.includes(x.name) ? "delete" : null
+                        }`}
                       ></button>
                     )}
                   </button>
