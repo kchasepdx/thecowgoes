@@ -8,9 +8,9 @@ function AnimalSounds() {
   const [displayAll, setDisplayAll] = useState(false);
 
   function playSound(event, file) {
-    event.target.className = "clicked";
     let sound = new Audio(file);
     sound.play();
+    event.target.className = "clicked";
     setTimeout(function () {
       event.target.className = "animal-pic";
     }, 1000);
@@ -18,18 +18,19 @@ function AnimalSounds() {
 
   function shuffle(array) {
     for (var i = array.length - 1; i >= 0; i--) {
-      console.log("index" + i);
       let randomIndex = Math.floor(Math.random() * i + 1);
-      console.log("ranindex= " + randomIndex);
       [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
-      console.log("array " + JSON.stringify(array));
     }
+    console.log(array.map((x) => x.name));
     return array;
   }
 
   function showMore() {
     let shuffledArr = shuffle(animalArr);
-    setArr(shuffledArr.slice(0, 4));
+    let ranSliceIndexOne = Math.floor(Math.random() * 11);
+
+    let ranSliceIndexTwo = ranSliceIndexOne + 4;
+    setArr(shuffledArr.slice(ranSliceIndexOne, ranSliceIndexTwo));
   }
 
   function setDisplay() {
@@ -94,6 +95,7 @@ function AnimalSounds() {
                   >
                     <img
                       className="animal-pic"
+                      key={x._id}
                       id={x.name}
                       src={x.image}
                       alt={x.name}
