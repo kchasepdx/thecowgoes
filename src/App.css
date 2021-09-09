@@ -206,6 +206,10 @@ nav {
   pointer-events: all !important;
 }
 
+.delete:hover {
+  background-color: tomato;
+}
+
 .delete-animal {
   background-color: transparent;
   cursor: not-allowed !important;
