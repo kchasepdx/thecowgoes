@@ -172,19 +172,58 @@ nav {
   }
 }
 
-/* GAME */
+/* MEMORY GAME */
 
+.mode-btn {
+  width: 8%;
+}
+#mode-btn-hard {
+  background: rgba(250, 6, 35, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 25vw;
+  font-family: "Righteous", cursive;
+  color: darkred;
+  margin: 1%;
+}
+
+#mode-btn-med {
+  background: rgba(150, 245, 46, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 25vw;
+  font-family: "Righteous", cursive;
+  color: darkgreen;
+  margin: 1%;
+}
+
+.game-card-hard {
+  background-color: #61dafb;
+  width: 10vw;
+  height: 18vh;
+  padding: 1px 6px;
+  margin: 3px;
+  border-radius: 20px;
+  border: none;
+}
 .game-card {
   background-color: #61dafb;
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 25vh;
   padding: 1px 6px;
   margin: 3px;
   border-radius: 20px;
   border: none;
 }
 
-.game-card:hover {
+.game-card:hover,
+.game-card-hard:hover {
   background-color: #e4bad4;
 }
 .placeholder-div {
@@ -248,7 +287,7 @@ nav {
 
 .animal-container-game {
   margin: 5% auto;
-  padding: 4% 20%;
+  padding: 4% 15%;
 }
 
 /* GAME- IPHONE */
@@ -267,6 +306,20 @@ nav {
   .animal-container-game {
     margin: 5% auto;
     padding: 4% 5%;
+  }
+  #mode-btn-med {
+    width: 70vw;
+    margin: 2%;
+  }
+  #mode-btn-hard {
+    width: 70vw;
+    margin: 2%;
+  }
+  .game-card-hard {
+    width: 15vw;
+    height: 12vh;
+  }
+  .game-card-med {
   }
 }
 

@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 
 import cowCartoon from "./pics/cow.png";
+import bunny from "./pics/bunny.png";
+import shark from "./pics/shark.png";
+
 import Media from "./media";
 
 function Memory() {
   const [clicked, setClicked] = useState({ choiceOne: "", choiceTwo: "" });
   const arrSix = Media.animals.slice(0, 6);
   const arrTwelve = arrSix.concat(arrSix);
+  const arrFifteen = Media.animals.slice(0, 15);
+  const arrThirty = arrFifteen.concat(arrFifteen);
   const [gameArray, setGameArray] = useState("");
   const [clear, setClear] = useState(["animal"]);
   const [turn, setTurn] = useState(true);
   const [playerOneScore, setPlayerOneScore] = useState(0);
   const [playerTwoScore, setPlayerTwoScore] = useState(0);
   const [modal, setModal] = useState(0);
+  const [difficulty, setDifficulty] = useState("medium");
 
   function shuffle(array) {
     for (var i = array.length - 1; i >= 0; i--) {
@@ -22,8 +28,24 @@ function Memory() {
     return array;
   }
 
+  // change difficulty
   useEffect(() => {
-    setGameArray(shuffle(arrTwelve));
+    if (difficulty === "medium") {
+      setGameArray(shuffle(arrTwelve));
+    } else if (difficulty === "hard") {
+      setGameArray(shuffle(arrThirty));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [difficulty]);
+
+  // Reset Game
+  useEffect(() => {
+    if (difficulty === "medium") {
+      setGameArray(shuffle(arrTwelve));
+    } else {
+      setGameArray(shuffle(arrThirty));
+    }
+
     setClear(["animal"]);
     setClicked({ choiceOne: "", choiceTwo: "" }, console.log("turn change"));
     setPlayerOneScore(0);
@@ -31,6 +53,7 @@ function Memory() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Get Winner or Change Turn
   useEffect(() => {
     console.log("useEffect Triggered");
     let totalScore = playerOneScore + playerTwoScore;
@@ -42,7 +65,11 @@ function Memory() {
       } else {
         setModal(3);
       }
-      setGameArray(shuffle(arrTwelve));
+      if (difficulty === "medium") {
+        setGameArray(shuffle(arrTwelve));
+      } else {
+        setGameArray(shuffle(arrThirty));
+      }
       setClear(["animal"]);
       setClicked({ choiceOne: "", choiceTwo: "" }, console.log("turn change"));
       setPlayerOneScore(0);
@@ -59,6 +86,7 @@ function Memory() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turn]);
 
+  // check choices for match
   function checkChoices(id, name) {
     console.log("checking");
 
@@ -132,6 +160,19 @@ function Memory() {
           </span>{" "}
           GAME
         </h1>
+        {difficulty === "medium" && (
+          <button id="mode-btn-hard" onClick={() => setDifficulty("hard")}>
+            <img className="mode-btn" src={shark} alt="shark" /> Change to Hard
+            Mode <img className="mode-btn" src={shark} alt="shark" />
+          </button>
+        )}
+        {difficulty === "hard" && (
+          <button id="mode-btn-med" onClick={() => setDifficulty("medium")}>
+            <img className="mode-btn" src={bunny} alt="bunny" /> Change to Easy
+            Mode <img className="mode-btn" src={bunny} alt="bunny" />
+          </button>
+        )}
+
         <div>
           <h2 className={`player-one ${turn && "highlight-player"}`}>
             <i className="fas fa-frog"></i> PLAYER ONE
@@ -183,45 +224,59 @@ function Memory() {
         </>
       ) : null}
 
-      {/* Body */}
+      {/* Cards */}
+
       {modal === 0 ? (
         <div className="animal-container-game container-fluid">
           <div className="row">
-            <div className="col">
-              {gameArray &&
-                gameArray.map((x, index) => (
-                  <button
-                    onClick={(event) => handleClick(event)}
-                    id={index}
-                    name={x.name}
-                    className={`game-card ${
-                      clear.includes(x.name) ? "delete" : null
-                    }`}
-                    key={index}
-                    disabled={clear.includes(x.name) ? true : false}
-                  >
-                    {clicked.choiceOne.choice === index.toString() ||
-                    clicked.choiceTwo.choice === index.toString() ? (
-                      <img
-                        className={`game-animal-pic ${
-                          clear.includes(x.name) ? "delete-animal" : null
-                        }`}
-                        id={index}
-                        src={x.image}
-                        alt={x.name}
-                        key={index}
-                      />
-                    ) : (
-                      <button
-                        name={x.name}
-                        id={index}
-                        className={`placeholder-div ${
-                          clear.includes(x.name) ? "delete" : null
-                        }`}
-                      ></button>
-                    )}
-                  </button>
-                ))}
+            <div className="row">
+              <div className="col">
+                {gameArray &&
+                  gameArray.map((x, index) => (
+                    <button
+                      onClick={(event) => handleClick(event)}
+                      id={index}
+                      name={x.name}
+                      className={
+                        clear.includes(x.name) & (difficulty === "medium")
+                          ? "delete game-card"
+                          : clear.includes(x.name) & (difficulty === "hard")
+                          ? "delete game-card-hard"
+                          : difficulty === "medium"
+                          ? "game-card"
+                          : difficulty === "hard"
+                          ? "game-card-hard"
+                          : null
+                      }
+                      // className={`game-card ${
+                      //   clear.includes(x.name) ? "delete" : null
+                      // }`}
+                      key={index}
+                      disabled={clear.includes(x.name) ? true : false}
+                    >
+                      {clicked.choiceOne.choice === index.toString() ||
+                      clicked.choiceTwo.choice === index.toString() ? (
+                        <img
+                          className={`game-animal-pic ${
+                            clear.includes(x.name) ? "delete-animal" : null
+                          }`}
+                          id={index}
+                          src={x.image}
+                          alt={x.name}
+                          key={index}
+                        />
+                      ) : (
+                        <button
+                          name={x.name}
+                          id={index}
+                          className={`placeholder-div ${
+                            clear.includes(x.name) ? "delete" : null
+                          }`}
+                        ></button>
+                      )}
+                    </button>
+                  ))}
+              </div>
             </div>
           </div>
         </div>
