@@ -57,31 +57,66 @@ function Memory() {
   useEffect(() => {
     console.log("useEffect Triggered");
     let totalScore = playerOneScore + playerTwoScore;
-    if (totalScore === 6) {
-      if (playerOneScore > playerTwoScore) {
-        setModal(1);
-      } else if (playerTwoScore > playerOneScore) {
-        setModal(2);
-      } else {
-        setModal(3);
-      }
-      if (difficulty === "medium") {
-        setGameArray(shuffle(arrTwelve));
-      } else {
-        setGameArray(shuffle(arrThirty));
-      }
-      setClear(["animal"]);
-      setClicked({ choiceOne: "", choiceTwo: "" }, console.log("turn change"));
-      setPlayerOneScore(0);
-      setPlayerTwoScore(0);
-    } else {
-      setTimeout(
+    if (difficulty === "medium") {
+      if (totalScore === 6) {
+        if (playerOneScore > playerTwoScore) {
+          setModal(1);
+        } else if (playerTwoScore > playerOneScore) {
+          setModal(2);
+        } else {
+          setModal(3);
+        }
+        if (difficulty === "medium") {
+          setGameArray(shuffle(arrTwelve));
+        } else {
+          setGameArray(shuffle(arrThirty));
+        }
+        setClear(["animal"]);
         setClicked(
           { choiceOne: "", choiceTwo: "" },
           console.log("turn change")
-        ),
-        2000
-      );
+        );
+        setPlayerOneScore(0);
+        setPlayerTwoScore(0);
+      } else {
+        setTimeout(
+          setClicked(
+            { choiceOne: "", choiceTwo: "" },
+            console.log("turn change")
+          ),
+          1000
+        );
+      }
+    } else if (difficulty === "hard") {
+      if (totalScore === 15) {
+        if (playerOneScore > playerTwoScore) {
+          setModal(1);
+        } else if (playerTwoScore > playerOneScore) {
+          setModal(2);
+        } else {
+          setModal(3);
+        }
+        if (difficulty === "medium") {
+          setGameArray(shuffle(arrTwelve));
+        } else {
+          setGameArray(shuffle(arrThirty));
+        }
+        setClear(["animal"]);
+        setClicked(
+          { choiceOne: "", choiceTwo: "" },
+          console.log("turn change")
+        );
+        setPlayerOneScore(0);
+        setPlayerTwoScore(0);
+      } else {
+        setTimeout(
+          setClicked(
+            { choiceOne: "", choiceTwo: "" },
+            console.log("turn change")
+          ),
+          1000
+        );
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turn]);
@@ -95,27 +130,53 @@ function Memory() {
         if (clicked.choiceOne.name === name) {
           setClear(clear.concat(name));
           console.log("match " + clear);
-          if (playerOneScore + playerTwoScore === 5) {
-            if (turn) {
-              setPlayerOneScore(playerOneScore + 1);
-              setTurn(!turn);
+          if (difficulty === "medium") {
+            if (playerOneScore + playerTwoScore === 5) {
+              if (turn) {
+                setPlayerOneScore(playerOneScore + 1);
+                setTurn(!turn);
+              } else {
+                setPlayerTwoScore(playerTwoScore + 1);
+                setTurn(!turn);
+              }
             } else {
-              setPlayerTwoScore(playerTwoScore + 1);
-              setTurn(!turn);
+              if (turn) {
+                setPlayerOneScore(playerOneScore + 1);
+                setClicked(
+                  { choiceOne: "", choiceTwo: "" },
+                  console.log("bonus turn")
+                );
+              } else {
+                setPlayerTwoScore(playerTwoScore + 1);
+                setClicked(
+                  { choiceOne: "", choiceTwo: "" },
+                  console.log("bonus turn")
+                );
+              }
             }
           } else {
-            if (turn) {
-              setPlayerOneScore(playerOneScore + 1);
-              setClicked(
-                { choiceOne: "", choiceTwo: "" },
-                console.log("bonus turn")
-              );
+            if (playerOneScore + playerTwoScore === 14) {
+              if (turn) {
+                setPlayerOneScore(playerOneScore + 1);
+                setTurn(!turn);
+              } else {
+                setPlayerTwoScore(playerTwoScore + 1);
+                setTurn(!turn);
+              }
             } else {
-              setPlayerTwoScore(playerTwoScore + 1);
-              setClicked(
-                { choiceOne: "", choiceTwo: "" },
-                console.log("bonus turn")
-              );
+              if (turn) {
+                setPlayerOneScore(playerOneScore + 1);
+                setClicked(
+                  { choiceOne: "", choiceTwo: "" },
+                  console.log("bonus turn")
+                );
+              } else {
+                setPlayerTwoScore(playerTwoScore + 1);
+                setClicked(
+                  { choiceOne: "", choiceTwo: "" },
+                  console.log("bonus turn")
+                );
+              }
             }
           }
         } else {
