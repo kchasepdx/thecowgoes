@@ -290,6 +290,14 @@ nav {
   padding: 4% 15%;
 }
 
+.tie-pic {
+  width: 15vw;
+}
+
+.vic-pic {
+  width: 60vw;
+}
+
 /* GAME- IPHONE */
 
 @media screen and (max-width: 768px) {

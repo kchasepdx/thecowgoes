@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import cowCartoon from "./pics/cow.png";
 import bunny from "./pics/bunny.png";
 import shark from "./pics/shark.png";
+import bird from "./pics/bird.png";
+import frog from "./pics/frog.png";
 
 import Media from "./media";
 
@@ -166,16 +168,10 @@ function Memory() {
             } else {
               if (turn) {
                 setPlayerOneScore(playerOneScore + 1);
-                setClicked(
-                  { choiceOne: "", choiceTwo: "" },
-                  console.log("bonus turn")
-                );
+                setClicked({ choiceOne: "", choiceTwo: "" });
               } else {
                 setPlayerTwoScore(playerTwoScore + 1);
-                setClicked(
-                  { choiceOne: "", choiceTwo: "" },
-                  console.log("bonus turn")
-                );
+                setClicked({ choiceOne: "", choiceTwo: "" });
               }
             }
           }
@@ -256,19 +252,21 @@ function Memory() {
           <div className="alert alert-success" role="alert">
             {modal === 1 ? (
               <>
-                <i className="fas fa-frog"> </i>
+                <img className="vic-pic" src={frog} alt="frog"></img>{" "}
                 <h5>THE FROG WINS</h5>
               </>
             ) : modal === 2 ? (
               <>
-                <i className="fas fa-kiwi-bird"></i>
+                <img className="vic-pic" src={bird} alt="bird"></img>
                 <h5>CONGRATS, BIRD!</h5>
               </>
             ) : modal === 3 ? (
               <>
-                <i className="fas fa-frog"></i>
-                <p>IT'S A TIE!</p>
-                <i className="fas fa-kiwi-bird"></i>
+                <p>
+                  <img className="tie-pic" src={frog} alt="frog"></img>IT'S A
+                  TIE!
+                  <img className="tie-pic" src={bird} alt="bird"></img>
+                </p>
               </>
             ) : null}
           </div>
